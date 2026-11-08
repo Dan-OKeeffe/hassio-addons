@@ -28,7 +28,7 @@ ports_description:
 
 map:
   - type: share
-    path: /share/obsidian-vault
+    path: /share
     read_only: false
   - type: ssl
     read_only: true
