@@ -34,16 +34,9 @@ map:
     read_only: true
 
 options:
-  # --- Obsidian Sync ---
-  # Obtained via http://<ha-ip>:8422/ or `npx obsidian-headless get-token`.
-  # Optional if already saved by the token generator UI.
-  obsidian_auth_token: ~
 
   # Name of the remote vault to sync (from ob sync-list-remote)
   vault_name: ""
-
-  # E2E encryption password — only required if your vault uses end-to-end encryption
-  vault_password: ~
 
   # --- MCP server (opt-in) ---
   enable_mcp: false
@@ -51,9 +44,7 @@ options:
   # MCP auth — set at least one when enable_mcp is true.
   # Bearer-token mode: set mcp_auth_token to a long random secret.
   # OAuth mode: set oauth_client_secret (and optionally oauth_client_id).
-  mcp_auth_token: ~
   oauth_client_id: "vault-mcp-client"
-  oauth_client_secret: ~
 
   # --- Tunnel mode (only relevant when enable_mcp is true) ---
   # "none"       — port 8420 exposed directly (use HA firewall / VPN)
@@ -69,9 +60,6 @@ options:
   #                provider (e.g. Google) in front of the tunnel hostname for
   #                real per-user authentication. See DOCS.md.
   tunnel_mode: "none"
-
-  # Tailscale options (only if tunnel_mode = tailscale)
-  tailscale_auth_key: ~
 
   # Direct HTTPS options (only if tunnel_mode = https)
   tls_cert_path: "/ssl/fullchain.pem"
@@ -104,9 +92,6 @@ options:
   # Example: http://homeassistant.local:8123/api/webhook/remarkable-ocr
   ha_ocr_url: ""
 
-  # Long-lived HA access token (not needed for unauthenticated webhooks).
-  ha_ocr_token: ~
-
   # Optional: HA image_processing entity_id to pass in the OCR payload.
   ha_ocr_entity: ""
 
@@ -125,11 +110,6 @@ options:
 
   # How often to fetch/pull all configured repos (seconds).
   git_sync_interval: 900
-
-  # GitHub personal access token (fine-grained, read-only, scoped to just the
-  # private repos above) — only needed if any git_repos entry is private.
-  # Never written to disk; passed per-request via an HTTP auth header only.
-  git_auth_token: ~
 
 schema:
   obsidian_auth_token: str?
