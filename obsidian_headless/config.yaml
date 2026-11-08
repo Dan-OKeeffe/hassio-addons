@@ -1,6 +1,6 @@
-name: Obsidian Headless
+name: Obsidian Headless Fixed
 version: "0.0.22"
-slug: obsidian_headless
+slug: obsidian_headless_fixed
 description: >-
   Syncs your Obsidian vault via Obsidian Sync (headless daemon). Optionally
   exposes the vault as a remote MCP server with bearer-token or OAuth 2.1
